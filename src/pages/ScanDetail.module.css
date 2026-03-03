@@ -1,0 +1,345 @@
+.scanDetail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.overviewCard {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  animation: slideInUp 0.4s ease-out;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.overviewItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.progressPercent {
+  min-width: 50px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.vulnCount {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--critical);
+}
+
+.vulnerabilityBreakdown {
+  display: flex;
+  gap: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.vulnItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.vulnColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.tabsCard {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  animation: slideInUp 0.5s ease-out 0.1s both;
+  overflow: hidden;
+}
+
+.tabsHeader {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-4);
+  background-color: var(--bg-secondary);
+}
+
+.tab {
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+  position: relative;
+  font-family: var(--font-family);
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.tab.active {
+  color: var(--primary);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.findings {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.findingItem {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--transition-fast);
+
+  &:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.findingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.findingTitleSection {
+  display: flex;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.findingSeverity {
+  flex-shrink: 0;
+}
+
+.findingTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.findingDescription {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.findingMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.cvssScore {
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+.findingFooter {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3);
+}
+
+.timestamp {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.executionLog {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.logEntry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  border-left: 3px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.logEntry:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.logEntry.info {
+  border-left-color: var(--info);
+}
+
+.logEntry.warning {
+  border-left-color: var(--warning);
+}
+
+.logEntry.success {
+  border-left-color: var(--success);
+}
+
+.logEntry.error {
+  border-left-color: var(--error);
+}
+
+.logTime {
+  min-width: 100px;
+  color: var(--text-secondary);
+  font-family: monospace;
+  font-size: var(--font-size-xs);
+}
+
+.logMessage {
+  flex: 1;
+  color: var(--text-primary);
+}
+
+.logStatus {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  min-width: 60px;
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: var(--space-4);
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: var(--space-4);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: var(--space-4);
+  }
+
+  .overviewGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .vulnerability Breakdown {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .findingHeader {
+    flex-direction: column;
+  }
+
+  .findingMeta {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
